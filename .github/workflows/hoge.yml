@@ -6,4 +6,11 @@ jobs:
   echo_hello_world:
     runs-on: ubuntu-latest
     steps:
-      - run: curl http://exmaple.com
+      - name: "挨拶"
+        run: echo "Nice to meet you!!"
+
+      - name: "名前を言う"
+        run: echo "My Name is Taro!!"
+
+      - name: "趣味を話す"
+        run: echo "I love programming!!"
