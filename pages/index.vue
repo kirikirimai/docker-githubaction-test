@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Posts test</h1>
+        <h1>Posts test 変更後</h1>
         <button @click="refreshData">Refresh</button>
         <div v-if="isFetching">Loading...</div>
         <div v-else-if="error">Error: {{ error.message }}</div>
