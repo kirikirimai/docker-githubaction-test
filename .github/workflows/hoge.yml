@@ -1,0 +1,25 @@
+name: Github Actions Demo
+
+on:
+  pull_request:
+    branches:
+      - dev
+
+jobs:
+  echo_hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "挨拶"
+        run: echo "Nice to meet you!!"
+
+      - name: "名前を言う"
+        run: echo "My Name is Taro!!"
+
+      - name: "趣味を話す"
+        run: echo "I love programming!!"
+
+  echo_goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "別れの挨拶をする"
+        run: echo "Good Bye!!"
