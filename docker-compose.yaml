@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+  app:
+    build:
+      context: .  # 現在のディレクトリをコンテキストとして使用
+      dockerfile: Dockerfile  # 使用するDockerfileを指定
+    ports:
+      - "3001:3001"
+      - "24678:24678"  # ホットリロード用のポート
+    environment:
+      - HOST=0.0.0.0
+      - PORT=3001
+      - CHOKIDAR_USEPOLLING=true  # ファイル変更をポーリングで監視
+    volumes:
+      - .:/frontend  # プロジェクトディレクトリをコンテナ内の/frontendにバインド
+      - node_modules:/frontend/node_modules  # node_modulesをホスト側と同期させない
+
+volumes:
+  node_modules:
